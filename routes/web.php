@@ -23,6 +23,8 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->post('sign-in', 'ApiAuthController@signIn');
         $router->post('recover-password', 'ApiAuthController@recoverPassword');
         $router->patch('recover-password', 'ApiAuthController@recoverPassword');
-        $router->get('companies', 'CompanyController@index');
+        $router->group(['middleware' => 'auth'], function() use ($router){
+            $router->get('companies', 'CompanyController@index');
+        });
     });
 });
