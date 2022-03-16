@@ -21,7 +21,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->group(['prefix' => 'user'], function () use ($router) {
         $router->post('register', 'ApiAuthController@register');
         $router->post('sign-in', 'ApiAuthController@signIn');
-        $router->post('recover-password', 'ApiAuthController@recoverPassword');
+        $router->post('recover-password', 'ApiAuthController@sendRecoverToken');
         $router->patch('recover-password', 'ApiAuthController@recoverPassword');
         $router->group(['middleware' => 'auth'], function() use ($router){
             $router->get('companies', 'CompanyController@index');
