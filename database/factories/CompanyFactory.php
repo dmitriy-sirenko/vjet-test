@@ -12,7 +12,7 @@ class CompanyFactory extends Factory
     public function definition(): array
     {
     	return [
-            'title' => $this->faker->title,
+            'title' => $this->faker->company,
             'description' => $this->faker->text,
             'phone' => $this->faker->phoneNumber,
             'user_id' => $this->faker->numberBetween(1, 10)
