@@ -25,6 +25,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->patch('recover-password', 'ApiAuthController@recoverPassword');
         $router->group(['middleware' => 'auth'], function() use ($router){
             $router->get('companies', 'CompanyController@index');
+            $router->post('companies', 'CompanyController@store');
         });
     });
 });
