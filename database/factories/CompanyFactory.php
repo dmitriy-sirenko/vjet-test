@@ -15,6 +15,7 @@ class CompanyFactory extends Factory
             'title' => $this->faker->title,
             'description' => $this->faker->text,
             'phone' => $this->faker->phoneNumber,
+            'user_id' => $this->faker->numberBetween(1, 10)
         ];
     }
 }

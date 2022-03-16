@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Hash;
 
 class UserFactory extends Factory
 {
@@ -28,7 +28,7 @@ class UserFactory extends Factory
             'last_name' => $this->faker->lastName(1, 20),
             'email' => $this->faker->unique()->safeEmail,
             'phone' => $this->faker->phoneNumber,
-            'password' => Crypt::encrypt($firstName . '123456')
+            'password' => Hash::make($firstName . '123456')
         ];
     }
 }

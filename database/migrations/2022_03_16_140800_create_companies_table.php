@@ -18,6 +18,9 @@ return new class extends Migration
             $table->string('title');
             $table->string('phone');
             $table->string('description');
+            $table->integer('user_id')->unsigned()->default(0);
+            $table->index('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
